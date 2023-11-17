@@ -1,0 +1,20 @@
+name: Sync with Template Repo
+on:
+  create
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Run setup script
+        run: python setup_repo.py
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "ormanis1609@gmail.com"
+          git config --local user.name "GitHub Action"
+          git add updateFromMaster.sh
+          git commit -m "Update updateFromMaster.sh"
+          git push
