@@ -91,6 +91,13 @@ include config.mk
 ## 8. Generating Files
 Makefiles can generate files automatically using rules. This is useful for generating header files, documentation, or other artifacts.
 
+! before running command form example you need to install doxygen on your system
+```bash
+sudo apt-add-repository universe
+sudo apt-get update
+sudo apt-get install doxygen
+```
+
 Example:
 ```makefile
 docs: README.md
